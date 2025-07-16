@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ラーメンサークル</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff3e0;
+    }
+    header {
+      background-color: #d32f2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #ffca28;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .shop-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      background-color: white;
+      display: inline-block;
+      width: 300px;
+      vertical-align: top;
+    }
+    .shop-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    #map-canvas {
+      height: 400px;
+      width: 100%;
+      margin: 20px 0;
+    }
+    .activity {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #ffebee;
+      border-radius: 8px;
+    }
+    .photo-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .photo-row img {
+        max-width: 48%;
+        height: auto;
+        border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>追手門学院大学公認　ラーメンサークル　麺魂🍜</h1>
+    <p>ラーメン好きによるラーメン好きのためのサークル！美味しいラーメンを一緒に楽しみましょう！</p>
+  </header>
+  <nav>
+    <a href="#home">ホーム</a>
+    <a href="#activities">活動報告</a>
+    <a href="#map">ラーメンMAP</a>
+    <a href="#shops">ラーメン店紹介</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <div class="content">
+    <section id="home">
+      <h2>ようこそ！</h2>
+      <p>ラーメンサークルは、美味しいラーメンを食べ歩き、仲間と楽しむサークルです！</p>
+    </section>
+    <section id="activities">
+      <h2>活動報告</h2>
+      <div class="activity">
+        <h3>2025/07/6: 吹田ラーメン巡り！</h3>
+        <p>吹田市にあるおいしいラーメン店を巡りました！</p>
+      </div>
+      <div class="activity">
+        <h3>2025/05/11: 新入生歓迎会！</h3>
+        <p>新メンバーを迎えて、淀川でバーベキュー！</p>
+        <div class="photo-row">
+          <img src="images/welcome_party1.jpg" alt="新メンバー歓迎会1" style="max-width: 48%; margin-right: 2%;">
+          <img src="images/welcome_party2.jpg" alt="新メンバー歓迎会2" style="max-width: 48%;">
+        </div>
+      </div>
+    </section>
+    <section id="map">
+      <h2>ラーメンMAP</h2>
+      <div id="map-canvas"></div>
+    </section>
+    <section id="shops">
+      <h2>ラーメン店紹介</h2>
+      <div class="shop-card">
+        <img src="images/jinmen.jpg" alt="人類みな麺類">
+        <h3>人類みな麺類</h3>
+        <p>評価: ★★★★★</p>
+        <p>極太チャーシュー！3種のラーメンはどれも絶品！😋</p>
+      </div>
+      <div class="shop-card">
+        <img src="images/rekisi.jpg" alt="歴史を刻め　下新庄本店">
+        <h3>歴史を刻め　下新庄本店</h3>
+        <p>評価: ★★★★★</p>
+        <p>関西の二郎系といえばここ！男は黙って全マシ！🔥</p>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>ご質問はこちらまで: インスタ @otemon_shinmensoul</p>
+      <img src="images/insta.jpg" alt="インスタQR">
+    </section>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVpIcSBXXnduwV2F14PHX0tA6adDOCWYo&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      const mapOptions = {
+        center: { lat: 34.6937, lng: 135.5023 }, // 大阪中心
+        zoom: 12,
+      };
+      const map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      
+      const shops = [
+        { name: "人類みな麺類", lat: 34.7024, lng: 135.4958, desc: "極太チャーシュー" }, // 難波周辺
+        { name: "歴史を刻め 下新庄本店", lat: 34.7010, lng: 135.5230, desc: "関西二郎系" }, // 下新庄周辺（仮）
+      ];
+      
+      shops.forEach(shop => {
+        const marker = new google.maps.Marker({
+          map: map,
+          position: { lat: shop.lat, lng: shop.lng },
+          title: shop.name,
+        });
+      });
+    }
+  </script>
+</body>
+</html>
