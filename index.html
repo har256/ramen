@@ -4,111 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ラーメンサークル</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-   body {
-  font-family: 'Noto Sans JP', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fefaf6;
-  color: #333;
-}
-
-header {
-  background-color: #c62828;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-nav {
-  background-color: #ffecb3;
-  padding: 15px 10px;
-  text-align: center;
-  border-bottom: 2px solid #fbc02d;
-}
-
-nav a {
-  margin: 0 20px;
-  color: #d84315;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #ff7043;
-}
-
-.content {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.shop-card {
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 15px;
-  background-color: white;
-  display: inline-block;
-  width: 300px;
-  vertical-align: top;
-  transition: transform 0.3s;
-}
-.shop-card:hover {
-  transform: scale(1.03);
-}
-
-.shop-card img {
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-#map-canvas {
-  height: 400px;
-  width: 100%;
-  margin: 30px 0;
-  border-radius: 16px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-.activity {
-  margin: 30px 0;
-  padding: 20px;
-  background-color: #ffe0e0;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.photo-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-.photo-row img {
-  max-width: 48%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-section h2 {
-  border-left: 6px solid #ff7043;
-  padding-left: 10px;
-  font-size: 1.6em;
-  margin-top: 40px;
-}
-
-section h3 {
-  margin-top: 25px;
-  color: #c62828;
-}
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf6f0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #ef5350, #e53935);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    nav {
+      background-color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 20px;
+      color: #d84315;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ef5350;
+    }
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .shop-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 15px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: top;
+      box-shadow: 4px 4px 12px #e0dcd5, -4px -4px 12px #ffffff;
+      transition: transform 0.2s ease-in-out;
+    }
+    .shop-card:hover {
+      transform: scale(1.03);
+    }
+    .shop-card img {
+      border-radius: 16px;
+      width: 100%;
+    }
+    #map-canvas {
+      height: 400px;
+      width: 100%;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    .activity {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 4px 4px 12px #e0dcd5, -4px -4px 12px #ffffff;
+      margin-top: 30px;
+    }
+    .photo-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      gap: 4%;
+    }
+    .photo-row img {
+      width: 48%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      border-left: 5px solid #ef5350;
+      padding-left: 12px;
+      font-size: 1.5em;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    section h3 {
+      margin-top: 25px;
+      color: #bf360c;
+    }
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #ef5350;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+      transition: background-color 0.3s;
+    }
+    #back-to-top:hover {
+      background-color: #d32f2f;
+    }
   </style>
 </head>
 <body>
@@ -134,16 +150,16 @@ section h3 {
         <h3>2025/07/20: 十三ラーメン巡り＆淀川で花火大会！</h3>
         <p>十三でラーメン店を巡った後、花火大会を行いました！</p>
         <div class="photo-row">
-          <img src="images/hanabi1.jpg" alt="花火大会1" style="max-width: 48%; margin-right: 2%;">
-          <img src="images/hanabi2.jpg" alt="花火大会2" style="max-width: 48%;">
+          <img src="images/hanabi1.jpg" alt="花火大会1">
+          <img src="images/hanabi2.jpg" alt="花火大会2">
         </div>
         <h3>2025/07/6: 吹田ラーメン巡り！</h3>
         <p>吹田市にあるおいしいラーメン店を巡りました！</p>
         <h3>2025/05/11: 新入生歓迎会！</h3>
         <p>新メンバーを迎えて、淀川でバーベキュー！</p>
         <div class="photo-row">
-          <img src="images/welcome_party1.jpg" alt="新メンバー歓迎会1" style="max-width: 48%; margin-right: 2%;">
-          <img src="images/welcome_party2.jpg" alt="新メンバー歓迎会2" style="max-width: 48%;">
+          <img src="images/welcome_party1.jpg" alt="新メンバー歓迎会1">
+          <img src="images/welcome_party2.jpg" alt="新メンバー歓迎会2">
         </div>
       </div>
     </section>
@@ -171,31 +187,43 @@ section h3 {
     <section id="contact">
       <h2>お問い合わせ</h2>
       <p>ご質問はこちらまで: インスタ<a href="https://instagram.com/otemon_shinmensoul"> @otemon_shinmensoul</a></p>
-      <img src="images/insta.jpg" alt="インスタQR" style="max-width: 24%;">
+      <img src="images/insta.jpg" alt="インスタQR" style="max-width: 24%; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     </section>
   </div>
+
+  <!-- トップに戻るボタン -->
+  <button id="back-to-top" title="トップへ">↑</button>
+
+  <!-- Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVpIcSBXXnduwV2F14PHX0tA6adDOCWYo&callback=initMap" async defer></script>
   <script>
     function initMap() {
       const mapOptions = {
-        center: { lat: 34.6937, lng: 135.5023 }, // 大阪中心
+        center: { lat: 34.6937, lng: 135.5023 },
         zoom: 12,
       };
       const map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-      
       const shops = [
-        { name: "人類みな麺類", lat: 34.7255, lng: 135.4992, desc: "極太チャーシュー" }, // 南方周辺
-        { name: "歴史を刻め 下新庄本店", lat: 34.7451, lng: 135.5203, desc: "関西二郎系" }, // 下新庄周辺
+        { name: "人類みな麺類", lat: 34.7255, lng: 135.4992 },
+        { name: "歴史を刻め 下新庄本店", lat: 34.7451, lng: 135.5203 },
       ];
-      
       shops.forEach(shop => {
-        const marker = new google.maps.Marker({
+        new google.maps.Marker({
           map: map,
           position: { lat: shop.lat, lng: shop.lng },
           title: shop.name,
         });
       });
     }
+
+    // トップに戻るボタン表示
+    const backToTopBtn = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
