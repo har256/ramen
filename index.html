@@ -3,134 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ラーメンサークル</title>
+  <title>ラーメンサークル 麺魂</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fdf6f0;
+      background-color: #fef9f5;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
-      background: linear-gradient(to right, #ef5350, #e53935);
+      background: linear-gradient(45deg, #d32f2f, #f44336);
       color: white;
       text-align: center;
-      padding: 40px 20px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 40px 20px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
     nav {
-      background-color: #fff;
-      padding: 15px 0;
+      background-color: #ffcc80;
+      padding: 10px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     nav a {
-      margin: 0 20px;
-      color: #d84315;
+      margin: 0 15px;
+      color: #333;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ef5350;
     }
     .content {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
     }
     .shop-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 15px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 20px;
+      padding: 15px;
       width: 300px;
       display: inline-block;
       vertical-align: top;
-      box-shadow: 4px 4px 12px #e0dcd5, -4px -4px 12px #ffffff;
-      transition: transform 0.2s ease-in-out;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
     }
     .shop-card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
     }
     .shop-card img {
-      border-radius: 16px;
       width: 100%;
-    }
-    #map-canvas {
-      height: 400px;
-      width: 100%;
-      margin: 30px 0;
-      border-radius: 16px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      border-radius: 8px;
     }
     .activity {
-      background: #fff;
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 4px 4px 12px #e0dcd5, -4px -4px 12px #ffffff;
-      margin-top: 30px;
+      background-color: #fff3e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
     }
     .photo-row {
       display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
       gap: 4%;
+      margin-top: 10px;
+      flex-wrap: wrap;
     }
     .photo-row img {
-      width: 48%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex: 1 1 48%;
+      border-radius: 8px;
     }
-    section h2 {
-      border-left: 5px solid #ef5350;
-      padding-left: 12px;
-      font-size: 1.5em;
-      margin-top: 40px;
-      margin-bottom: 10px;
+    #map-canvas {
+      width: 100%;
+      height: 400px;
+      margin: 30px 0;
+      border-radius: 12px;
     }
-    section h3 {
-      margin-top: 25px;
-      color: #bf360c;
-    }
-    #back-to-top {
+    #top-button {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #ef5350;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f44336;
       color: white;
       border: none;
       border-radius: 50%;
       width: 50px;
       height: 50px;
       font-size: 24px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       cursor: pointer;
-      display: none;
-      z-index: 999;
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    #back-to-top:hover {
-      background-color: #d32f2f;
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #999;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>追手門学院大学公認　ラーメンサークル　麺魂🍜</h1>
-    <p>ラーメン好きによるラーメン好きのためのサークル！美味しいラーメンを一緒に楽しみましょう！</p>
+    <p>ラーメン好きによるラーメン好きのためのサークル！</p>
   </header>
   <nav>
     <a href="#home">ホーム</a>
@@ -144,6 +125,7 @@
       <h2>ようこそ！</h2>
       <p>ラーメンサークルは、美味しいラーメンを食べ歩き、仲間と楽しむサークルです！</p>
     </section>
+
     <section id="activities">
       <h2>活動報告</h2>
       <div class="activity">
@@ -163,38 +145,43 @@
         </div>
       </div>
     </section>
+
     <section id="shops">
       <h2>ラーメン店紹介</h2>
-      <div class="shop-card">
+      <a href="https://www.google.com/maps?q=人類みな麺類" target="_blank" class="shop-card">
         <img src="images/jinmen.jpg" alt="人類みな麺類">
         <h3>人類みな麺類</h3>
         <p>〒532-0011 大阪府大阪市淀川区西中島１丁目１２−１５</p>
         <p>極太チャーシュー！</p>
         <p>3種のラーメンはどれも絶品！😋</p>
-      </div>
-      <div class="shop-card">
-        <img src="images/rekisi.jpg" alt="歴史を刻め　下新庄本店">
+      </a>
+      <a href="https://www.google.com/maps?q=歴史を刻め 下新庄本店" target="_blank" class="shop-card">
+        <img src="images/rekisi.jpg" alt="歴史を刻め 下新庄本店">
         <h3>歴史を刻め　下新庄本店</h3>
         <p>〒533-0021 大阪府大阪市東淀川区下新庄５丁目１−５９</p>
         <p>関西の二郎系といえばここ！</p>
         <p>男は黙って全マシ！🔥</p>
-      </div>
+      </a>
     </section>
+
     <section id="map">
-      <h2>ラーメンMAP 製作予定</h2>
+      <h2>ラーメンMAP</h2>
       <div id="map-canvas"></div>
     </section>
+
     <section id="contact">
       <h2>お問い合わせ</h2>
-      <p>ご質問はこちらまで: インスタ<a href="https://instagram.com/otemon_shinmensoul"> @otemon_shinmensoul</a></p>
-      <img src="images/insta.jpg" alt="インスタQR" style="max-width: 24%; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <p>インスタ: <a href="https://instagram.com/otemon_shinmensoul" target="_blank">@otemon_shinmensoul</a></p>
+      <img src="images/insta.jpg" alt="インスタQR" style="max-width: 24%;">
     </section>
+
+    <footer>
+      <p>このサイトは <a href="https://github.com/yourname/ramen-circle" target="_blank">GitHub</a> で公開・開発中 🍥</p>
+    </footer>
   </div>
 
-  <!-- トップに戻るボタン -->
-  <button id="back-to-top" title="トップへ">↑</button>
+  <button id="top-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
-  <!-- Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVpIcSBXXnduwV2F14PHX0tA6adDOCWYo&callback=initMap" async defer></script>
   <script>
     function initMap() {
@@ -203,27 +190,35 @@
         zoom: 12,
       };
       const map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
       const shops = [
         { name: "人類みな麺類", lat: 34.7255, lng: 135.4992 },
         { name: "歴史を刻め 下新庄本店", lat: 34.7451, lng: 135.5203 },
       ];
+
       shops.forEach(shop => {
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
           map: map,
           position: { lat: shop.lat, lng: shop.lng },
           title: shop.name,
         });
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: `
+            <div style="font-size: 14px;">
+              <strong>${shop.name}</strong><br>
+              <a href="https://www.google.com/maps?q=${encodeURIComponent(shop.name)}" target="_blank">
+                Googleマップで開く 📍
+              </a>
+            </div>
+          `
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
       });
     }
-
-    // トップに戻るボタン表示
-    const backToTopBtn = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
   </script>
 </body>
 </html>
