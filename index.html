@@ -64,6 +64,13 @@
       width: 100%;
       border-radius: 8px;
     }
+    .shop-scroll {
+      display: flex;
+      gap: 20px; /* カード間の隙間 */
+      overflow-x: auto; /* 横スクロール可能にする */
+      scroll-snap-type: x mandatory; /* スクロールでカードがカチッと止まる */
+      padding-bottom: 10px; /* スクロールバー分の余白 */
+    }
     .activity {
       background-color: #fff3e0;
       border-radius: 8px;
@@ -160,20 +167,22 @@
     
     <section id="shops">
       <h2>ラーメン店紹介</h2>
-      <a href="https://www.google.com/maps?q=人類みな麺類" target="_blank" class="shop-card">
-        <img src="images/jinmen.jpg" alt="人類みな麺類">
-        <h3>人類みな麺類</h3>
-        <p>〒532-0011 大阪府大阪市淀川区西中島１丁目１２−１５</p>
-        <p>極太チャーシュー！</p>
-        <p>3種のラーメンはどれも絶品！😋</p>
-      </a>
-      <a href="https://www.google.com/maps?q=歴史を刻め 下新庄本店" target="_blank" class="shop-card">
-        <img src="images/rekisi.jpg" alt="歴史を刻め 下新庄本店">
-        <h3>歴史を刻め　下新庄本店</h3>
-        <p>〒533-0021 大阪府大阪市東淀川区下新庄５丁目１−５９</p>
-        <p>関西の二郎系といえばここ！</p>
-        <p>男は黙って全マシ！🔥</p>
-      </a>
+      <div class="shop-scroll">
+        <a href="https://www.google.com/maps?q=人類みな麺類" target="_blank" class="shop-card">
+          <img src="images/jinmen.jpg" alt="人類みな麺類">
+          <h3>人類みな麺類</h3>
+          <p>〒532-0011 大阪府大阪市淀川区西中島１丁目１２−１５</p>
+          <p>極太チャーシュー！</p>
+          <p>3種のラーメンはどれも絶品！😋</p>
+        </a>
+        <a href="https://www.google.com/maps?q=歴史を刻め 下新庄本店" target="_blank" class="shop-card">
+          <img src="images/rekisi.jpg" alt="歴史を刻め 下新庄本店">
+          <h3>歴史を刻め　下新庄本店</h3>
+          <p>〒533-0021 大阪府大阪市東淀川区下新庄５丁目１−５９</p>
+          <p>関西の二郎系といえばここ！</p>
+          <p>男は黙って全マシ！🔥</p>
+        </a>
+      </div>
     </section>
 
     <section id="map">
@@ -231,3 +240,4 @@
 </body>
 
 </html>
+
