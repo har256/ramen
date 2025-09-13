@@ -147,27 +147,23 @@
       from { opacity: 0.4; }
       to { opacity: 1; }
     }
-    .prev, .next {
+    .dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
-  color: #333;
-  font-weight: bold;
-  font-size: 18px;
-  user-select: none;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  z-index: 10;
 }
 
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+.active {
+  background-color: #d32f2f;
 }
   </style>
 </head>
@@ -240,9 +236,13 @@
           </div>
         </div>
       </div>
-  <!-- ナビゲーションボタン（オプション: 手動切り替え用） -->
-  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-  <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <!-- ドットナビゲーション -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
   <!-- もっと見るリンクは外側に -->
   <a href="katsudo.html">→ 活動報告をもっと見る</a>
 </section>
@@ -338,25 +338,38 @@
     
    setTimeout(showSlides, 3000); // 3秒ごとに実行（3000ms = 3秒、2秒なら2000msに変更）
   }
+    let slideIndex = 1;
+  showSlides(slideIndex);
 
-  function changeSlide(n) {// ナビゲーションボタン用の関数（オプション）
-    slideIndex += n;
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
     let slides = document.getElementsByClassName("slide");
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    if (slideIndex < 1) {
-      slideIndex = slides.length;
-    }
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
     slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(() => showSlides(slideIndex + 1), 3000); // 3秒ごとに自動切り替え
   }
+  
   </script>
 </body>
 
 </html>
+
 
 
 
