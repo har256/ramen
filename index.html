@@ -130,13 +130,13 @@
       text-decoration: underline;
     }
     .slideshow-container {
-      position: relative;
-      max-width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-      width: 100%;
-      padding: 0; /* 追加 */
-    }
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
     .slide {
       display: none;
     }
@@ -148,25 +148,27 @@
       to { opacity: 1; }
     }
     .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 16px;
-      color: #333;
-      font-weight: bold;
-      font-size: 18px;
-      user-select: none;
-      background-color: rgba(255, 255, 255, 0.7);
-      border-radius: 4px;
-      z-index: 10;
-    }
-    .prev {
-      left: 0; /* 左端に固定 */
-    }
-    .next {
-      right: 0; /* 右端に固定 */
-    }
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
   </style>
 </head>
   <body>
@@ -355,6 +357,7 @@
 </body>
 
 </html>
+
 
 
 
