@@ -129,7 +129,35 @@
     #activity-preview a:hover {
       text-decoration: underline;
     }
-    
+    .slideshow-container {/* スライドショーのコンテナ */
+      position: relative;
+      max-width: 100%; /* コンテンツ幅に合わせる */
+      margin: auto;
+    }
+    .slide {/* スライドを非表示に */
+      display: none;
+    }
+    .fade {/* フェードアニメーション */
+      animation: fadeEffect 1s;
+    }
+    @keyframes fadeEffect {/* フェードアニメーションのキーフレーム */
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+    .prev, .next {/* ナビゲーションボタン（オプション） */
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+    }
   </style>
 </head>
 <body>
@@ -239,9 +267,45 @@
       });
     }
   </script>
+  <script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    
+    for (let i = 0; i < slides.length; i++) {// すべてのスライドを非表示
+      slides[i].style.display = "none";
+    }
+    
+   slideIndex++; // 次のスライドを表示
+    if (slideIndex > slides.length) {
+      slideIndex = 1; // 最後のスライド後に最初に戻る
+    }
+    slides[slideIndex - 1].style.display = "block";
+    
+   setTimeout(showSlides, 3000); // 3秒ごとに実行（3000ms = 3秒、2秒なら2000msに変更）
+  }
+
+  function changeSlide(n) {// ナビゲーションボタン用の関数（オプション）
+    slideIndex += n;
+    let slides = document.getElementsByClassName("slide");
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    if (slideIndex < 1) {
+      slideIndex = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
 </body>
 
 </html>
+
 
 
 
