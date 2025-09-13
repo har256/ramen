@@ -332,15 +332,9 @@
     <script>
       let slideIndex = 1;
 let timeoutId;
-let isPaused = false;
 
 window.addEventListener('DOMContentLoaded', () => {
   showSlides(slideIndex);
-  const slideshowContainer = document.querySelector('.slideshow-container');
-  if (slideshowContainer) {
-    slideshowContainer.addEventListener('mouseenter', pauseSlideshow);
-    slideshowContainer.addEventListener('mouseleave', resumeSlideshow);
-  }
 });
 
 function plusSlides(n) {
@@ -349,16 +343,6 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
-}
-
-function pauseSlideshow() {
-  isPaused = true;
-  clearTimeout(timeoutId);
-}
-
-function resumeSlideshow() {
-  isPaused = false;
-  timeoutId = setTimeout(() => showSlides(slideIndex + 1), 3000);
 }
 
 function showSlides(n) {
@@ -381,13 +365,12 @@ function showSlides(n) {
   slides[slideIndex - 1].classList.add("fade");
   dots[slideIndex - 1].className += " active";
   clearTimeout(timeoutId);
-  if (!isPaused) {
-    timeoutId = setTimeout(() => showSlides(slideIndex + 1), 3000);
-  }
+  timeoutId = setTimeout(() => showSlides(slideIndex + 1), 3000);
 }
     </script>
   </body>
 </html>
+
 
 
 
