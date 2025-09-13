@@ -218,13 +218,7 @@
           </div>
         </div>
     <!-- スライド3: 吹田ラーメン巡り -->
-        <div class="slide fade">
-          <div class="activity">
-            <h3>2025/07/6: 吹田ラーメン巡り！</h3>
-            <p>吹田市にあるおいしいラーメン店を巡りました！</p>
-        <!-- 画像があれば追加 -->
-          </div>
-        </div>
+
     <!-- スライド4: 新入生歓迎会 -->
         <div class="slide fade">
           <div class="activity">
@@ -354,7 +348,29 @@
     }
     slides[slideIndex - 1].style.display = "block";
   }
+    let slideInterval = setTimeout(showSlides, 3000);
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  slideInterval = setTimeout(showSlides, 3000);
+}
+
+document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+  clearTimeout(slideInterval);
+});
+document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+  slideInterval = setTimeout(showSlides, 3000);
+});
 </script>
 </body>
 
 </html>
+
