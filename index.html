@@ -219,7 +219,16 @@
           </div>
         </div>
     <!-- スライド3: 吹田ラーメン巡り -->
-
+<div class="slide fade">
+  <div class="activity">
+    <h3>2025/07/6: 吹田ラーメン巡り！</h3>
+    <p>吹田市にあるおいしいラーメン店を巡りました！</p>
+    <div class="photo-row">
+      <img src="images/suita1.jpg" alt="吹田ラーメン1">
+      <img src="images/suita2.jpg" alt="吹田ラーメン2">
+    </div>
+  </div>
+</div>
     <!-- スライド4: 新入生歓迎会 -->
         <div class="slide fade">
           <div class="activity">
@@ -320,24 +329,6 @@
     }
   </script>
   <script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    
-    for (let i = 0; i < slides.length; i++) {// すべてのスライドを非表示
-      slides[i].style.display = "none";
-    }
-    
-   slideIndex++; // 次のスライドを表示
-    if (slideIndex > slides.length) {
-      slideIndex = 1; // 最後のスライド後に最初に戻る
-    }
-    slides[slideIndex - 1].style.display = "block";
-    
-   setTimeout(showSlides, 3000); // 3秒ごとに実行（3000ms = 3秒、2秒なら2000msに変更）
-  }
     let slideIndex = 1;
   showSlides(slideIndex);
 
@@ -369,6 +360,7 @@
 </body>
 
 </html>
+
 
 
 
