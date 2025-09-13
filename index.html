@@ -179,7 +179,10 @@
     </section>
 
     <section id="activity-preview">
-      <h2>最近の活動報告</h2>
+  <h2>最近の活動報告</h2>
+  <div class="slideshow-container">
+    <!-- スライド1: 最新の活動 -->
+    <div class="slide fade">
       <div class="activity">
         <h3>2025/07/26: レンタルルームでオリジナルまぜそば作り！</h3>
         <p>レンタルルームを借りて、まぜそばを作って楽しみました！</p>
@@ -191,9 +194,45 @@
           <img src="images/rental3.jpg" alt="レンタルルーム3">
           <img src="images/rental4.jpg" alt="レンタルルーム4">
         </div>
-        <a href="katsudo.html">→ 活動報告をもっと見る</a>
       </div>
-    </section>
+    </div>
+    <!-- スライド2: 十三ラーメン巡り -->
+    <div class="slide fade">
+      <div class="activity">
+        <h3>2025/07/20: 十三ラーメン巡り＆淀川で花火大会！</h3>
+        <p>十三でラーメン店を巡った後、花火大会を行いました！</p>
+        <div class="photo-row">
+          <img src="images/fireworks1.jpg" alt="花火大会1">
+          <img src="images/fireworks2.jpg" alt="花火大会2">
+        </div>
+      </div>
+    </div>
+    <!-- スライド3: 吹田ラーメン巡り -->
+    <div class="slide fade">
+      <div class="activity">
+        <h3>2025/07/6: 吹田ラーメン巡り！</h3>
+        <p>吹田市にあるおいしいラーメン店を巡りました！</p>
+        <!-- 画像があれば追加 -->
+      </div>
+    </div>
+    <!-- スライド4: 新入生歓迎会 -->
+    <div class="slide fade">
+      <div class="activity">
+        <h3>2025/05/11: 新入生歓迎会！</h3>
+        <p>新メンバーを迎えて、淀川でバーベキュー！</p>
+        <div class="photo-row">
+          <img src="images/welcome1.jpg" alt="新メンバー歓迎会1">
+          <img src="images/welcome2.jpg" alt="新メンバー歓迎会2">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ナビゲーションボタン（オプション: 手動切り替え用） -->
+  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  <!-- もっと見るリンクは外側に -->
+  <a href="katsudo.html">→ 活動報告をもっと見る</a>
+</section>
     
     <section id="shops">
       <h2>ラーメン店紹介</h2>
@@ -305,6 +344,7 @@
 </body>
 
 </html>
+
 
 
 
